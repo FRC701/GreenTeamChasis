@@ -6,6 +6,7 @@
 
 #include <frc2/command/CommandBase.h>
 #include <frc2/command/CommandHelper.h>
+#include <coroutine>/Pheonix.h>
 
 /**
  * An example command.
@@ -26,4 +27,8 @@ class Greenchasis
   void End(bool interrupted) override;
 
   bool IsFinished() override;
+
+private:
+
+
 };
