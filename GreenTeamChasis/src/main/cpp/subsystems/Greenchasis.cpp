@@ -4,6 +4,17 @@
 
 #include "subsystems/Greenchasis.h"
 
+Greenchasis::Greenchasis(WPI_TalonFX& ID1, WPI_TalonFX& ID2, WPI_TalonFX& ID3, WPI_TalonFX& ID4)
+        : mFrontR(ID1),
+          mFrontL(ID2),
+          mBackR(ID3),
+          mBackL(ID4),
+          mDrive(mFrontR,mFrontL)
+{
+  mBackR.Follow(mFrontR);
+    mBackL.Follow(mFrontL);
+}
+
 Greenchasis::Greenchasis() {
   // Use addRequirements() here to declare subsystem dependencies.
 }
