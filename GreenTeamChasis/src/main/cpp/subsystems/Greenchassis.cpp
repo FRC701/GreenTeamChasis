@@ -3,6 +3,7 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "subsystems/Greenchassis.h"
+#include <frc/smartdashboard/SmartDashboard.h>
 
 Greenchasis::Greenchasis(WPI_TalonFX& ID1, WPI_TalonFX& ID2, WPI_TalonFX& ID3, WPI_TalonFX& ID4):
     mFrontR(ID1),
@@ -18,13 +19,14 @@ Greenchasis::Greenchasis(WPI_TalonFX& ID1, WPI_TalonFX& ID2, WPI_TalonFX& ID3, W
 
 
 // This method will be called once per scheduler run
-void Greenchasis::Periodic() {}
+void Greenchasis::Periodic() {
 
-double Greenchassis:: motorRun(double MotorSpeed)
+    frc::SmartDashboard::PutNumber("SpeedRight(FeetPerSecond)", *mFrontR.GetSelectedSensorVelocity()*());
+    frc::SmartDashboard::PutNumber("SpeedLeft(FeetPerSecond)", *mFrontL.GetSelectedSensorVelocity()*());
+
+}
+
+void Greenchassis::GreenDrive(double left, double right)
 {
-    mFrontR.Set(MotorSpeed);
-    mFrontL.Set(MotorSpeed);
-    mBackR.Set(MotorSpeed);
-    mBackL.Set(MotorSpeed);
-    return MotorSpeed;
+   Drive.GreenDrive(left, right);
 }   
