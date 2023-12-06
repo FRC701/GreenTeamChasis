@@ -21,8 +21,8 @@ Greenchasis::Greenchasis(WPI_TalonFX& ID1, WPI_TalonFX& ID2, WPI_TalonFX& ID3, W
 // This method will be called once per scheduler run
 void Greenchasis::Periodic() {
 
-    frc::SmartDashboard::PutNumber("SpeedRight(FeetPerSecond)", *mFrontR.GetSelectedSensorVelocity()*());
-    frc::SmartDashboard::PutNumber("SpeedLeft(FeetPerSecond)", *mFrontL.GetSelectedSensorVelocity()*());
+    frc::SmartDashboard::PutNumber("SpeedRight(FeetPerSecond)", *mFrontR.GetSelectedSensorVelocity()*(/12);
+    frc::SmartDashboard::PutNumber("SpeedLeft(FeetPerSecond)", *mFrontL.GetSelectedSensorVelocity()*(/12);
 
 }
 
